@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module">
+        import '../nav-bar.js';
+    </script>
+    <title>Nav bar</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif; 
+        }
+    </style>
+    <nav-bar
+        id="nav"
+        title="Hola Prueba"
+        menuTitle="Menu Principal"
+    ></nav-bar>
+</body>
+<script>
+
+    document.addEventListener('icon-clicked', (e)=>{
+        console.log(e.detail);
+    })
+
+    document.addEventListener('option-clicked', (e)=>{
+        console.log(e.detail);
+    })
+
+    const navbar = document.getElementById('nav');
+
+    navbar.hasBurgerBar = true;
+    navbar.icons = ['search', 'shopping-cart'];
+    navbar.menuOptions = [
+        {
+            text: 'Opción 1',
+            page: 'precios'
+        },
+        {
+            text: 'Opción 2',
+            page: 'stats'
+        }
+    ]
+</script>
+</html>
